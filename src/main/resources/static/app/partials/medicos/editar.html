@@ -1,0 +1,101 @@
+
+<form novalidate name="formulario" class="row" ng-submit="submeter()">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Primeiro Nome</label>
+			<input name="titulo" class="form-control" ng-model="foto.titulo" required>
+
+			<span ng-show = "formulario.$submitted && formulario.titulo.$error.required"
+				class="form-control alert-danger">
+				Primeiro Nome obrigatorio
+			</span>
+			<span ng-show="formulario.$submitted && formulario.titulo.$error.maxlength"
+				class="form-control alert-danger">
+				No máximo 20 caracteres!
+			</span>
+		</div>
+    <div class="form-group">
+			<label>Último Nome</label>
+			<input name="titulo" class="form-control" ng-model="foto.titulo" required>
+
+			<span ng-show = "formulario.$submitted && formulario.titulo.$error.required"
+				class="form-control alert-danger">
+				Último Nome obrigatorio
+			</span>
+			<span ng-show="formulario.$submitted && formulario.titulo.$error.maxlength"
+				class="form-control alert-danger">
+				No máximo 20 caracteres!
+			</span>
+		</div>
+    <div class="form-group">
+			<label>Especialidade</label>
+			<input name="titulo" class="form-control" ng-model="foto.titulo" required>
+
+			<span ng-show = "formulario.$submitted && formulario.titulo.$error.required"
+				class="form-control alert-danger">
+				Especialidade obrigatorio
+			</span>
+			<span ng-show="formulario.$submitted && formulario.titulo.$error.maxlength"
+				class="form-control alert-danger">
+				No máximo 20 caracteres!
+			</span>
+		</div>
+    <div class="form-group">
+			<label>Email</label>
+			<input name="titulo" class="form-control" ng-model="foto.titulo" required>
+
+			<span ng-show = "formulario.$submitted && formulario.titulo.$error.required"
+				class="form-control alert-danger">
+				Email obrigatorio
+			</span>
+			<span ng-show="formulario.$submitted && formulario.titulo.$error.maxlength"
+				class="form-control alert-danger">
+				No máximo 20 caracteres!
+			</span>
+		</div>
+    <div class="form-group">
+			<label>Ativo</label>
+			<input name="titulo" class="form-control" ng-model="foto.titulo" required>
+		</div>
+
+    <div class="form-group">
+			<label>Status</label>
+			<input name="titulo" class="form-control" ng-model="foto.titulo" required>
+		</div>
+
+		<div class="form-group">
+			<label>Estado</label>
+			<select name="grupo" ng-model="foto.grupo" class="form-control"
+					required ng-controller="GruposController"
+					ng-options="grupo._id as (grupo.nome | uppercase) for grupo in grupos">
+				<option value="">Escolha um grupo</option>
+			</select>
+			<span ng-show="formulario.$submitted && formulario.grupo.$error.required"
+				class="form-control alert-danger">
+				Grupo obrigatório
+			</span>
+		</div>
+
+    <div class="form-group">
+			<label>Cidade</label>
+			<select name="grupo" ng-model="foto.grupo" class="form-control"
+					required ng-controller="GruposController"
+					ng-options="grupo._id as (grupo.nome | uppercase) for grupo in grupos">
+				<option value="">Escolha um grupo</option>
+			</select>
+			<span ng-show="formulario.$submitted && formulario.grupo.$error.required"
+				class="form-control alert-danger">
+				Grupo obrigatório
+			</span>
+		</div>
+
+		<button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid">
+			Editar
+		</button>
+		<a href="/medicos" meu-focus class="btn btn-primary">Voltar</a>
+		<hr>
+	</div>
+	<div class="col-md-6">
+		<minha-foto url="{{foto.url}}" titulo="{{foto.titulo}}"></minha-foto>
+	</div>
+</form>

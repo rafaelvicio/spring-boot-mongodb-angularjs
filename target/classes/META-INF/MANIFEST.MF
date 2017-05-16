@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: todoapp
+Implementation-Version: 0.1.0
+Built-By: rafael
+Implementation-Vendor-Id: org.programmersdiary
+Build-Jdk: 1.8.0_131
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

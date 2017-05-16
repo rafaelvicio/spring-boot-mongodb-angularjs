@@ -17,29 +17,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row"><a href="medicos/editar/1">1</a></th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td><input type="checkbox"></td>
-      <td>Sim</td
-    </tr>
-    <tr>
-      <th scope="row"><a href="medicos/editar/1">2</a></th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td><input type="checkbox"></td>
-      <td>Não</td
-    </tr>
-    <tr>
-      <th scope="row"><a href="medicos/editar/1">3</a></th>
-      <td>Larry the Bird</td>
-      <td>@twitter</td>
-      <td>@Facebook</td>
-      <td><input type="checkbox"></td>
-      <td>Sim</td>
+		<tr ng-repeat="medico in medicos">
+      <th href="/medicos/editar/{{medico._id}}">{{contato.id}}</th>
+      <th>{{contato.primeiroNome}}</th>
+      <th>{{contato.ultimoNome}}</th>
+      <th>{{contato.email}}</th>
+      <th>{{contato.ativo}}</th>
+      <th>{{contato.ocupado}}</th>
     </tr>
   </tbody>
 </table>

@@ -4,3 +4,5 @@
 /node_modules
 /src/main/resources/static/assets/components
 /target/
+
+.settings

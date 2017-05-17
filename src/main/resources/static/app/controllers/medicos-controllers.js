@@ -1,26 +1,24 @@
-angular.module('app').controller('MedicosController', function(recursoMedico) {
+angular.module('app').controller('MedicosController', function($scope, recursoMedico) {
 
-	var vm = this;
-
-	vm.medicos = [];
-	vm.filtro = '';
-	vm.mensagem = '';
+	$scope.medicos = [];
+	$scope.filtro = '';
+	$scope.mensagem = '';
 
 	recursoMedico.query(function(medicos) {
-		vm.medicos = medicos;
+		$scope.medicos = medicos;
 	}, function(erro) {
 		console.log(erro);
 	});
 
-	vm.remover = function(medico) {
+	$scope.remover = function(medico) {
 
 		recursoMedico.delete({medicoId: medico._id}, function() {
-			var indiceDoMedico = vm.medicos.indexOf(medico);
-			vm.medicos.splice(indiceDoMedico, 1);
-			vm.mensagem = 'Medico ' + medico._id + ' removido com sucesso!';
+			var indiceDoMedico = $scope.medicos.indexOf(medico);
+			$scope.medicos.splice(indiceDoMedico, 1);
+			$scope.mensagem = 'Medico ' + medico.primeiroNome + ' removida com sucesso!';
 		}, function(erro) {
 			console.log(erro);
-			vm.mensagem = 'Não foi possível apagar o medico ' + medico._id;
+			$scope.mensagem = 'Não foi possível apagar o medico ' + medico.primeiroNome;
 		});
 	};
 

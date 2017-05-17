@@ -18,12 +18,12 @@
   </thead>
   <tbody>
 		<tr ng-repeat="medico in medicos">
-      <th href="/medicos/editar/{{medico._id}}">{{contato.id}}</th>
-      <th>{{contato.primeiroNome}}</th>
-      <th>{{contato.ultimoNome}}</th>
-      <th>{{contato.email}}</th>
-      <th>{{contato.ativo}}</th>
-      <th>{{contato.ocupado}}</th>
+      <th href="/medicos/editar/{{medico._id}}">{{medico._id}}</th>
+      <th>{{medico.primeiroNome}}</th>
+      <th>{{medico.ultimoNome}}</th>
+      <th>{{medico.email}}</th>
+      <th>{{medico.ativo}}</th>
+      <th>{{medico.ocupado}}</th>
     </tr>
   </tbody>
 </table>

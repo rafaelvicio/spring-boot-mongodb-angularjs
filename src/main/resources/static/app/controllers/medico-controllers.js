@@ -1,31 +1,29 @@
 angular.module('app')
-	.controller('MedicoController', ['recursoMedico', '$routeParams', 'cadastroDeMedicos', function(recursoMedico, $routeParams, cadastroDeMedicos) {
+	.controller('MedicoController', function($scope, recursoMedico, $routeParams, cadastroDeMedicos) {
 
-		var vm = this;
-
-		vm.medico = {};
-		vm.mensagem = '';
+		$scope.medico = {};
+		$scope.mensagem = '';
 
 		if($routeParams.medicoId) {
 			recursoMedico.get({medicoId: $routeParams.medicoId}, function(medico) {
-				vm.medico = medico;
+				$scope.medico = medico;
 			}, function(erro) {
 				console.log(erro);
-				vm.mensagem = 'Não foi possível obter o medico'
+				$scope.mensagem = 'Não foi possível obter o medico';
 			});
 		}
 
-		vm.submeter = function() {
+		$scope.submeter = function() {
 
-			if (vm.formulario.$valid) {
-				cadastroDeMedicos.cadastrar(vm.medico)
+			if ($scope.formulario.$valid) {
+				cadastroDeMedicos.cadastrar($scope.medico)
 				.then(function(dados) {
-					vm.mensagem = dados.mensagem;
-					if (dados.inclusao) vm.medico = {};
+					$scope.mensagem = dados.mensagem;
+					if (dados.inclusao) $scope.medico = {};
 				})
 				.catch(function(erro) {
-					vm.mensagem = erro.mensagem;
+					$scope.mensagem = erro.mensagem;
 				});
 			}
 		};
-	}]);
+	});

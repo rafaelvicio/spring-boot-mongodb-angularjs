@@ -13,26 +13,22 @@ angular.module('app', ['ngAnimate', 'ngRoute', 'ngResource', 'meusServicos'])
 
 		$routeProvider.when('/medicos', {
 			templateUrl: '../partials/medicos/index.html',
-			controller: 'MedicosController',
-			controllerAs: 'medicos'
+			controller: 'MedicosController'
 		});
 
 		$routeProvider.when('/medicos/cadastro', {
 			templateUrl: '../partials/medicos/cadastro.html',
-			controller: 'MedicoController',
-			controllerAs: 'medico'
+			controller: 'MedicoController'
 		});
 
 		$routeProvider.when('/medicos/editar/:medicoId', {
 			templateUrl: '../partials/medicos/editar.html',
-			controller: 'MedicoController',
-			controllerAs: 'medico'
+			controller: 'MedicoController'
 		});
 
 		$routeProvider.when('/medicos/:medicoId', {
 			templateUrl: '../partials/medicos/medico.html',
-			controller: 'MedicoController',
-			controllerAs: 'medico'
+			controller: 'MedicoController'
 		});
 
 		$routeProvider.otherwise({redirectTo: '/'});

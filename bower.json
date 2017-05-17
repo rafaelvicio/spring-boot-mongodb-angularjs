@@ -1,0 +1,26 @@
+{
+  "name": "spring-boot-mongodb-angularjs",
+  "homepage": "https://github.com/rafaelvicio/spring-boot-mongodb-angularjs",
+  "authors": [
+    "Rafael Augusto <rafaelvicio@icloud.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "angularjs#^1.6.4",
+    "bower": "*",
+    "angular-animate": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-resource": "^1.6.4",
+    "jquery": "^3.2.1"
+  }
+}
